@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="referrer" content="no-referrer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Note</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/public_header.css">
+  <link rel="stylesheet" href="./css/media.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="wrap">
+      <nav class="nav">
+        <div class="menu">
+          <ul class="menu__list">
+            <li class="menu__list__item"><a href="./index.html">
+                <i class="left_arrow">
+                  <img src="./img/left_arrow.png" alt="">
+                </i>About Calendar
+              </a></li>
+            <li class="menu__list__item"><a href="./Almanac.html">Almanac</a></li>
+            <li class="menu__list__item"><a href="./Holiday.html">Holiday</a></li>
+            <li class="menu__list__item"><a href="#">Notice</a></li>
+            <li class="menu__list__item"><a href="#">Other</a></li>
+          </ul>
+        </div>
+      </nav>
+      <section>
+        <div class="title">
+          <a href="./Newday.html"><img src="./img/2.png" alt=""></a>
+        </div>
+        <div class="time">
+          <div class="b_ri">
+            <dl>
+              <dt>
+                <p id="demo"></p>
+              </dt>
+              <div class="real_time">
+                <dd id="dd"></dd>
+                <dd id="dd2"></dd>
+              </div>
+            </dl>
+
+            <script>
+              var d = new Date();
+              document.getElementById("demo").innerHTML = d.toDateString();
+            </script>
+          </div>
+        </div>
+    </div>
+    </section>
+    </div>
+  </header>
+  <main class="mian">
+    <div class="note wrap">
+      <div class="new">
+        <div class="inner">
+          <input type="text">
+        </div>
+        <div class="btn-new">
+          <button>添加</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
