@@ -69,6 +69,7 @@ section .time .time__current .time__current--hs {
 
 .b_ri dl dd {
   /* font-size: 16px; */
+  white-space: nowrap;
 }
 
 #demo {
@@ -141,14 +142,58 @@ section .time .time__month .time__bg img {
 @media screen and (max-width: 1200px) {
   section .title {
     width: 35rem !important;
+    flex: 5;
   }
 
   #demo {
     font-size: 2.5vw;
+    text-align: right;
   }
 
   section .time {
+    flex: 2;
     font-size: 1.4rem;
+    justify-content: flex-end;
+  }
+
+  .b_ri #demo {
+    font-size: 2vw;
+  }
+
+  .b_ri dl dd {
+    font-size: 2vw;
+  }
+
+  .real_time {
+    margin-top: 0;
+    white-space: nowrap;
+  }
+
+  #demo {
+    margin-left: auto;
+  }
+
+  .real_time dd {
+    transform: scale(.8);
+  }
+
+  .real_time #dd {
+    overflow: hidden;
+  }
+
+  .menu .menu__list .menu__list__item+.menu__list__item {
+    margin-left: 8vw !important;
+  }
+
+  .menu .menu__list .menu__list__item {
+    /* width: fit-content; */
+    font-weight: 300;
+    font-size: 2vw;
+  }
+
+  .left_arrow {
+    width: 10px;
+    margin-right: 5px;
   }
 }
 
@@ -156,6 +201,9 @@ section .time .time__month .time__bg img {
   .menu .menu__list .menu__list__item {
     width: fit-content;
     font-weight: 300;
-    font-size: 1.25rem;
+    font-size: 12px;
+  }
+  .menu .menu__list .menu__list__item+.menu__list__item {
+    margin-left: 4vw !important;
   }
 }

@@ -223,3 +223,16 @@
     animation: twelve 3s 0s infinite;
     transform-origin: bottom;
 }
+
+[data-aos][data-aos][data-aos-delay="3200"].aos-animate, body[data-aos-delay="3200"] [data-aos].aos-animate {
+    transition-delay: 3.2s;
+}
+[data-aos][data-aos][data-aos-delay="3600"].aos-animate, body[data-aos-delay="3600"] [data-aos].aos-animate {
+    transition-delay: 3.6s;
+}
+[data-aos][data-aos][data-aos-delay="4000"].aos-animate, body[data-aos-delay="4000"] [data-aos].aos-animate {
+    transition-delay: 4s;
+}
+[data-aos][data-aos][data-aos-delay="4400"].aos-animate, body[data-aos-delay="4400"] [data-aos].aos-animate {
+    transition-delay: 4.4s;
+}

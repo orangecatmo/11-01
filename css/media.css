@@ -14,9 +14,22 @@
     .wrap {
         width: 80% !important;
     }
+
+    #demo {
+        text-align: right;
+    }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
+
+    .scroll_state .scroll_down,
+    .scroll_state .scroll_up {
+        display: none;
+        width: 27px !important;
+    }
+}
+
+@media screen and (max-width: 768px) {
     html {
         font-size: 12px;
     }
@@ -32,25 +45,10 @@
         width: 70%;
     }
 
-    .main_list {
-        height: 300px !important;
-    }
-
     .list_p {
-        padding-top: 100px !important;
+        padding-top: 60px !important;
     }
 
-    .b_ri #demo {
-        font-size: 2.5vw;
-    }
-
-    .b_ri dl dd {
-        font-size: 2vw;
-    }
-
-    .real_time {
-        margin-top: 12px;
-    }
 
     .main {
         position: relative;
@@ -90,15 +88,7 @@
         text-align: right;
     }
 
-    .menu .menu__list .menu__list__item {
-        /* width: fit-content; */
-        font-weight: 300;
-        font-size: 1.25rem;
-    }
 
-    .menu .menu__list .menu__list__item+.menu__list__item {
-        margin-left: 1.25rem;
-    }
 
     .calendar {
         width: 100%;
@@ -120,28 +110,12 @@
         transform: translateX(-50%);
     }
 
-    section .time .time__month .time__bg {
-        width: 7.3rem;
-        right: 50%;
-        top: -50%;
-        /* bottom: 50%; */
-        right: auto;
-        height: 7.3rem;
-        margin-left: 3.65rem;
-        /* transform: translate(50%, 50%); */
-    }
-
     .tl-toubu p {
         font-size: 1.5rem;
     }
 
     .ri-toubu-right img {
         width: 1.5rem;
-    }
-
-    section .time .time__current {
-        font-size: 1rem;
-        transform: scale(.8) translateY(-.8rem);
     }
 
     section .time .time__current .time__current--hs {
@@ -187,10 +161,6 @@
         font-size: 1rem;
     }
 
-    .ft__menu {
-        transform: scale(.8);
-    }
-
     .footer {
         padding-bottom: 0;
     }
@@ -217,7 +187,118 @@
 
     .scroll_state .scroll_down,
     .scroll_state .scroll_up {
+        display: none;
         width: 27px !important;
+    }
+
+    .main {
+        margin-bottom: 1.5rem;
+    }
+
+    .main .sign {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin-top: 0;
+    }
+
+    .main .sign .mian_back {
+        background-image: url("../img/T.png");
+    }
+
+    .main_list {
+        height: 40vw !important;
+    }
+
+    .main .sign .main_list .list_p {
+        font-size: 16px;
+    }
+
+    .main h4 {
+        font-size: 14px !important;
+    }
+
+    .main .star_icon {
+        width: 12px;
+        height: 12px;
+    }
+
+    .main .sign h4 a {
+        top: -5px;
+    }
+
+    .main .sign #wr4 {
+        bottom: 5%;
+    }
+
+    .main>.list {
+        padding-top: 50vw;
+        margin: 10vw 0;
+    }
+
+    .list>.clearfix>.aos-init>dt>img {
+        width: 60%;
+    }
+
+    .list dl {
+        width: 33%;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .main .map {
+        height: 40vw !important;
+    }
+
+    .mapWrap {
+        padding-bottom: 39px;
+    }
+
+    .end {
+        margin-bottom: 1.5rem;
+    }
+
+}
+
+@media screen and (min-width: 500px) and (max-width: 768px) {
+    .list_p {
+        padding-top: 15vw !important;
+    }
+
+    .main .sign .main_list .list_p {
+        font-size: 3.5vw;
+    }
+
+    .main h4 {
+        font-size: 2.5vw !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .menu .menu__list .menu__list__item+.menu__list__item {
+        margin-left: 4vw;
+    }
+
+    #wr5 {
+        padding: 5px;
+    }
+
+    .mapWrap {
+        padding-bottom: 30px;
+    }
+
+    .main h4 a {
+        top: -5px;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    .wrap {
+        width: 90% !important;
     }
 }
 

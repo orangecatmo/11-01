@@ -32,14 +32,15 @@ ul {
 }
 
 .main .calender_year h4 {
-    font-size: 80px;
+    font-size: 60px;
     color: #DEB718;
     font-family: ipagp;
 }
 
 .main .calender_year_prev,
 .main .calender_year_next {
-    width: 89px;
+    width: 49px;
+    cursor: pointer;
 }
 
 .main .calender_year_prev img,
@@ -466,35 +467,4 @@ ul {
     padding-bottom: 45px;
     padding-right: 5px;
     font-size: 18px;
-}
-
-/* 页面滚动状态 style */
-.scroll_state .scroll_down,
-.scroll_state .scroll_up {
-    position: fixed;
-    top: 50%;
-    width: 37px;
-    z-index: 99;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .5s linear;
-}
-
-.scroll_state .scroll_show {
-    opacity: 1;
-}
-
-.scroll_state .scroll_down img,
-.scroll_state .scroll_up img {
-    width: 100%;
-}
-
-.scroll_state .scroll_down {
-    left: 3%;
-}
-
-.scroll_state .scroll_up {
-    right: 3%;
-    /* 旋转箭头180度，朝上 */
-    transform: rotate(180deg);
 }

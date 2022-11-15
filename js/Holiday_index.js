@@ -1,72 +1,41 @@
-var time = new Date()
+$(document).ready(setInterval(function () {
+    var myDate = new Date;
+    var year = myDate.getFullYear(); //获取当前年
+    var mon = myDate.getMonth() + 1; //获取当前月
+    var date = myDate.getDate(); //获取当前日
+    var h = myDate.getHours(); //获取当前小时数(0-23)
+    var m = myDate.getMinutes(); //获取当前分钟数(0-59)
+    var s = myDate.getSeconds(); //获取当前秒
+    var week = myDate.getDay();
+    var weeks = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
+    // $("#demo").html("Thu Apr" + " " + date + " " + year);
+    // $("#demo").html("Thu Apr" + " " + date + " " + year);
+    // 2022年4月13日
+    var width = $(window).width()
 
-var currentDateString = time.toLocaleString().split(" ")[0]
+    var timeHtml = year + "年" + mon + "月" + date + "日"
+    var countHtml = h + ":" + addZero(m) + ":" + addZero(s)
 
-var currrentDateSplitArr = currentDateString.split('/')
 
-var formMate = ["年", "月", "日"]
-
-var currentDate = ''
-
-for (var i = 0; i < currrentDateSplitArr.length; i++) {
-    currentDate += currrentDateSplitArr[i] + formMate[i]
-
-}
-
-var currentDateElement = document.querySelector('#currentDate')
-var timeHsElement = document.querySelector('#timeHs')
-
-currentDateElement.innerHTML = currentDate
-
-var currentMinutes = time.getMinutes()
-
-timeHsElement.innerHTML = time.getHours() + ":" + (currentMinutes < 10 ? "0" + currentMinutes : currentMinutes)
-
-setInterval(() => {
-    time = new Date()
-    currentMinutes = time.getMinutes()
-    timeHsElement.innerHTML = time.getHours() + ":" + (currentMinutes < 10 ? "0" + currentMinutes : currentMinutes)
-}, 1000)
-
-var week = [{
-        weekNum: 0,
-        weekString: "日曜日"
-    },
-    {
-        weekNum: 1,
-        weekString: "月曜日"
-    },
-    {
-        weekNum: 2,
-        weekString: "火曜日"
-    },
-    {
-        weekNum: 3,
-        weekString: "水曜日"
-    },
-    {
-        weekNum: 4,
-        weekString: "木曜日"
-    },
-    {
-        weekNum: 5,
-        weekString: "金曜日"
-    },
-    {
-        weekNum: 6,
-        weekString: "土曜日"
+    if (width <= 720) {
+        timeHtml = year + "年" + '<br/>' + mon + "月" + date + "日"
+        countHtml = h + ":" + addZero(m)
     }
-]
 
-var currentWeek = time.getDay()
+    $("#demo").html(timeHtml);
 
-var timeWeek = document.querySelector('#timeWeek')
 
-for (var i = 0; i < week.length; i++) {
+    if (h >= 12) {
+        $("#dd").html('PM' + ' ' + countHtml);
+    } else {
+        $("#dd").html('AM' + ' ' + countHtml);
+    }
+    $("#dd2").html(weeks[week]);
 
-    if (currentWeek === week[i].weekNum)
-        timeWeek.innerHTML = week[i].weekString
+}, 1000))
 
+function addZero(m) {
+    return m < 10 ? ('0' + m) : m;
 }
 
 // 轮播图
@@ -91,7 +60,7 @@ for (mon in list) {
 }
 console.log("元素列表", adderrs);
 // 向左
-main_l.addEventListener("click", function() {
+main_l.addEventListener("click", function () {
     // if (main_index != 0) {
     //     main_index--
     //     main_img.src = adderrs[main_index]['move_bg']
@@ -102,14 +71,14 @@ main_l.addEventListener("click", function() {
 
 })
 
-main_r.addEventListener("click", function() {
+main_r.addEventListener("click", function () {
     toggle(0)
 })
 
-main_cont.addEventListener("mouseover", function() {
+main_cont.addEventListener("mouseover", function () {
     autoToggle(3000, false)
 })
-main_cont.addEventListener("mouseout", function() {
+main_cont.addEventListener("mouseout", function () {
     autoToggle(3000, true)
 })
 
@@ -164,8 +133,16 @@ function toggle_img_text() {
      */
     let main_txts = adderrs[main_index]['days'];
     main_img.src = adderrs[main_index]['move_bg']
+
+    // 图片添加缩放
+    if (main_index === 2 || main_index === 8) {
+        main_img.style.transform = 'scale(.7)'
+    } else {
+        main_img.style.transform = 'none'
+    }
+
     main_text.innerHTML = '';
-    main_txts.forEach(function(element) {
+    main_txts.forEach(function (element) {
         main_text.innerHTML += "<div> <p>" + element['value'] + "</p><p>" + element['key'] + "</p></div>"
     });
 

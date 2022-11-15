@@ -11,12 +11,24 @@ $(document).ready(setInterval(function () {
     // $("#demo").html("Thu Apr" + " " + date + " " + year);
     // $("#demo").html("Thu Apr" + " " + date + " " + year);
     // 2022年4月13日
-    $("#demo").html(year + "年" + mon + "月" + date + "日");
+    var width = $(window).width()
+
+    var timeHtml = year + "年" + mon + "月" + date + "日"
+    var countHtml = h + ":" + addZero(m) + ":" + addZero(s)
+
+
+    if (width <= 720) {
+        timeHtml = year + "年" + '<br/>' + mon + "月" + date + "日"
+        countHtml = h + ":" + addZero(m)
+    }
+
+    $("#demo").html(timeHtml);
+
 
     if (h >= 12) {
-        $("#dd").html('PM' + ' ' + h + ":" + addZero(m) + ":" + addZero(s));
+        $("#dd").html('PM' + ' ' + countHtml);
     } else {
-        $("#dd").html('AM' + ' ' + h + ":" + addZero(m) + ":" + addZero(s));
+        $("#dd").html('AM' + ' ' + countHtml);
     }
     $("#dd2").html(weeks[week]);
 
@@ -290,7 +302,7 @@ $(function () {
         // 从本地储存 获取 今日签名，有 则将 json 字符串 转化为 JavaScript 对象，没有 则未 undefined
         var todaySign = localStorage.getItem(localKey) && JSON.parse(localStorage.getItem(localKey))
         // 第一次抽签 或者 今日未抽签
-        if (!todaySign || (todaySign.timestamp - dateTime) >= dayTime) {
+        if (!todaySign || (dateTime - todaySign.timestamp) >= dayTime) {
             var sign = arr[Math.floor(Math.random() * arr.length)]
             todaySign = new TodaySign(sign, dateTime)
             // 添加到本地存储  将JavaScript对象 转为 JSON字符串 存入
@@ -307,7 +319,8 @@ $(function () {
     // 抽签 ---  new
     var drawFlag = false  // 点击标识
     var drawItem = getTodatSign();
-    console.log('drawItem', drawItem)
+    var windowWidth = $(window).width()
+
     $('.mian_back').click(function () {
         drawFlag = !drawFlag  // 取反
         $(this).animate({ opacity: 0 }, 1000, function () {
@@ -315,21 +328,23 @@ $(function () {
             if (drawFlag) {
                 $('.mian_back').css('background-image', "none");
                 $('.list_p').html(drawItem.sign).css({ "color": "#000" })
+                $('.main_list').css("backgroundColor", "#e9c000");
             } else {
                 // 再次点击变回原样
-                $('.mian_back').css('background-image', "url(../img/t_bg.png)");
+                $('.mian_back').css('background-image', `url(./img/${windowWidth <= 720 ? 'T' : 't_bg'}.png)`);
                 $('.list_p').html('今日は何の日ですか').css({ "color": "#000" })
+                $('.main_list').css("backgroundColor", "#fff");
             }
             $('.mian_back').animate({ opacity: 1 }, 1000);
         });
-        $('.main_list').css("backgroundColor", "#e9c000");
+
     })
 
 
     //链接跳转方法
-    let months = document.querySelector('.list>.wrap').querySelectorAll('dl');
+    let months = document.querySelector('.list>.wrap')?.querySelectorAll('dl');
     console.log(months);
-    months.forEach(item => {
+    months?.forEach(item => {
         item.onclick = function () {
             let mon = this.querySelector('dd').innerText;
             location.assign(`Newday.html?mon=${mon.slice(0, -1)}`)

@@ -52,6 +52,12 @@ section .time .time__current .time__current--hs {
     margin-top: 1.67rem;
 }
 
+.Holiday {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* 星期几 */
 
@@ -101,9 +107,16 @@ section .time .time__month .time__bg img {
 
 .content .main_l,
 .content .main_r {
+    width: 49px;
     user-select: none;
     font-size: 30px;
     cursor: pointer;
+}
+
+.content .main_l img,
+.content .main_r img{
+    width: 100%;
+    height: 100%;
 }
 
 .content .main_idea {
@@ -115,6 +128,7 @@ section .time .time__month .time__bg img {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 9;
     transform: translate(-50%, -50%);
     text-align: center;
     /* transform: translateY(-50%); */
@@ -133,13 +147,14 @@ section .time .time__month .time__bg img {
     to {
         transform: rotate(0deg);
     }
+
     from {
         transform: rotate(-360deg);
     }
 }
 
 .main {
-    margin: 1.5rem 0;
+    margin: 5rem 0;
 }
 
 .main .container {
@@ -269,6 +284,7 @@ td {
 }
 
 @media screen and (max-width:900px) {
+
     th,
     td {
         /* height: 3rem; */

@@ -85,6 +85,7 @@ section .time .time__month .time__bg img {
     to {
         transform: rotate(0deg);
     }
+
     from {
         transform: rotate(-360deg);
     }
@@ -221,6 +222,7 @@ td {
 }
 
 @media screen and (max-width:900px) {
+
     th,
     td {
         /* height: 3rem; */

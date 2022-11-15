@@ -1,6 +1,6 @@
 @media screen and (max-width:1200px) {
     .wrap {
-        width: 80% !important;
+        width: 90% !important;
     }
     .b_le {
         float: none;
@@ -228,7 +228,7 @@ body {
 
 #wr5 {
     bottom: 0;
-    padding: 20px;
+    padding: 10px;
     width: 100%;
     text-align: center;
     background-color: rgb(232,190,0);
@@ -323,7 +323,7 @@ body {
 }
 
 .mapWrap {
-    padding-bottom: 79px;
+    padding-bottom: 59px;
 }
 
 .map {
@@ -342,33 +342,3 @@ body {
     margin-bottom: 160px;
 }
 
-/* 页面滚动状态 style */
-.scroll_state .scroll_down,
-.scroll_state .scroll_up {
-    position: fixed;
-    top: 50%;
-    width: 37px;
-    z-index: 99;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .5s linear;
-}
-
-.scroll_state .scroll_show {
-    opacity: 1;
-}
-
-.scroll_state .scroll_down img,
-.scroll_state .scroll_up img {
-    width: 100%;
-}
-
-.scroll_state .scroll_down {
-    left: 3%;
-}
-
-.scroll_state .scroll_up {
-    right: 3%;
-    /* 旋转箭头180度，朝上 */
-    transform: rotate(180deg);
-}

@@ -29,33 +29,33 @@ setInterval(() => {
 }, 1000)
 
 var week = [{
-        weekNum: 0,
-        weekString: "日曜日"
-    },
-    {
-        weekNum: 1,
-        weekString: "月曜日"
-    },
-    {
-        weekNum: 2,
-        weekString: "火曜日"
-    },
-    {
-        weekNum: 3,
-        weekString: "水曜日"
-    },
-    {
-        weekNum: 4,
-        weekString: "木曜日"
-    },
-    {
-        weekNum: 5,
-        weekString: "金曜日"
-    },
-    {
-        weekNum: 6,
-        weekString: "土曜日"
-    }
+    weekNum: 0,
+    weekString: "日曜日"
+},
+{
+    weekNum: 1,
+    weekString: "月曜日"
+},
+{
+    weekNum: 2,
+    weekString: "火曜日"
+},
+{
+    weekNum: 3,
+    weekString: "水曜日"
+},
+{
+    weekNum: 4,
+    weekString: "木曜日"
+},
+{
+    weekNum: 5,
+    weekString: "金曜日"
+},
+{
+    weekNum: 6,
+    weekString: "土曜日"
+}
 ]
 
 var currentWeek = time.getDay()
@@ -73,7 +73,7 @@ for (var i = 0; i < week.length; i++) {
 
 // let hashSearch = location.hash && location.hash.split('#')[1]
 const date = new Date()
-    //获取页面传递参数 调用日期函数
+//获取页面传递参数 调用日期函数
 let year = date.getFullYear()
 let get_mon = Number(getQueryVariable('mon')) - 1;
 var month = 1;
@@ -130,6 +130,12 @@ function init_caledar(currentYear, currentMonth) {
         document.querySelector('#solarTerm').style.display = 'block'
         document.querySelector('#holiday').style.display = 'block'
     }
+
+    // 跳转锚点
+    let linkAnchor = ['one_month', 'two_month', 'three_month', 'four_month', 'five_month', 'six_month', 'seven_month', 'eight_month', 'nine_month', 'ten_month', 'eleven_month', 'twe_month']
+
+    // 设置跳转链接
+    timeMonth.querySelector('a').href = './Note.html#' + linkAnchor[currentMonth]
 
     // 设置月份单词
     timeMonth.querySelector('.time__month--current').innerHTML = caledar_data.word
@@ -212,23 +218,23 @@ function init_caledar(currentYear, currentMonth) {
     }
 
     let date = new Date(currentYear, currentMonth, 1)
-        // 第一天wekk
+    // 第一天wekk
     date.setDate(1)
     let week_first = date.getDay()
     week_first = week_first === 0 ? 7 : week_first
-        // 当前月份最后一天
+    // 当前月份最后一天
     let day_laster = new Date(currentYear, currentMonth + 1, 0).getDate()
-        // 上个月最后一天
+    // 上个月最后一天
     let prevMonth_laster = new Date(currentYear, currentMonth, 0).getDate()
-        // 日历表格中的数字
+    // 日历表格中的数字
     let table_day = prevMonth_laster - (week_first - 2)
-        // console.log(table_day);
+    // console.log(table_day);
     let flag = false
 
     for (let i = 0; i < 6; i++) {
         const tr_node = document.createElement('tr')
         tr_node.setAttribute('valign', 'top')
-            // 设置表格主题颜色 ， 应用 css 变量
+        // 设置表格主题颜色 ， 应用 css 变量
         tr_node.style.setProperty('--theme-color', caledar_data.table_theme[i])
 
         for (let j = 1; j <= 7; j++, table_day++) {
@@ -338,15 +344,15 @@ let prev_month = get_mon > -1 ? get_mon : date.getMonth();
 if (prev_month == 0) prev_month = 12
 console.log("prev_month:" + prev_month);
 let next_month = get_mon > -1 ? get_mon + 2 : date.getMonth() + 2;
-if (next_month >= 12) next_month = 1
+if (next_month > 12) next_month = 1
 console.log("next_month:" + next_month);
 // 渲染上一个月 下一个月 月份的按钮.
 prevMonth.innerHTML = prev_month
 nextMonth.innerHTML = next_month
 
-prev.addEventListener('click', function(e) {
+prev.addEventListener('click', function (e) {
     e.preventDefault()
-        // console.log("prev_month:" + prev_month);
+    // console.log("prev_month:" + prev_month);
     if (prevMonth.innerHTML == 12) return
     if (prev_month === 1) {
         --prev_month
@@ -359,7 +365,7 @@ prev.addEventListener('click', function(e) {
     init_caledar(year, --month)
 })
 
-next.addEventListener('click', function(e) {
+next.addEventListener('click', function (e) {
     e.preventDefault()
     if (nextMonth.innerHTML == 1) return
     if (next_month === 12) {

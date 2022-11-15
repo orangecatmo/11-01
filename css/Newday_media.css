@@ -4,19 +4,61 @@
   }
 }
 
+@media (min-width: 768px) and (max-width: 1440px) {
+  .dayIntroduced__item__title {
+    font-size: 1.2vw;
+  }
+
+  section .time {
+    font-size: 1.8vw;
+  }
+
+  section .time .time__month {
+    width: 8rem;
+  }
+
+  section .time .time__month .time__bg {
+    width: 8rem;
+    height: auto;
+    top: -30%;
+  }
+
+  .calendar {
+    margin-right: 2vw;
+  }
+
+  .dayIntroduced__bottom {
+    flex-wrap: nowrap;
+  }
+
+  .dayIntroduced__item__list {
+    padding: 1rem;
+  }
+
+  .solar_term_date {
+    width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+}
+
 @media screen and (max-width: 1440px) {
   html {
     font-size: 14px;
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 1024px) {
+  .solar_term_date {
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   html {
     font-size: 12px;
-  }
-
-  .menu .menu__list {
-    transform: scale(.8) translateX(-3.5rem);
   }
 
   table {
@@ -25,6 +67,10 @@
 
   section .title {
     width: 70%;
+  }
+
+  section .title {
+    flex: 5;
   }
 
   .main {
@@ -56,15 +102,6 @@
     text-align: right;
   }
 
-  .menu .menu__list .menu__list__item {
-    width: fit-content;
-    font-size: .45rem;
-  }
-
-  .menu .menu__list .menu__list__item+.menu__list__item {
-    margin-left: 1.25rem;
-  }
-
   .calendar {
     width: 100%;
     margin-right: 0;
@@ -87,13 +124,14 @@
 
   section .time .time__month .time__bg {
     width: 7.3rem;
-    right: 50%;
     top: -50%;
-    /* bottom: 50%; */
     right: auto;
     height: 7.3rem;
     margin-left: 3.65rem;
-    /* transform: translate(50%, 50%); */
+  }
+
+  section .time {
+    font-size: 2vw;
   }
 
   .tl-toubu p {
@@ -104,20 +142,8 @@
     width: 1.5rem;
   }
 
-  section .time .time__current {
-    font-size: 1rem;
-    transform: scale(.8) translateY(-.8rem);
-  }
-
   section .time .time__current .time__current--hs {
     margin-top: 1rem;
-  }
-
-  .dayIntroduced__left__item:first-child {
-    position: absolute;
-    top: 0rem;
-    right: 2%;
-    transform: scale(.8);
   }
 
   .tl-toubu .ri-toubu-right div span {

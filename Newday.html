@@ -6,30 +6,35 @@
     <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JANUARY</title>
-    <link rel="stylesheet" href="./css/Newday_base.css">
+    <title>日日是好日 </title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/public_header.css">
     <link rel="stylesheet" href="./css/Newday_index.css">
     <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./css/Newday_media.css">
     <link rel="stylesheet" href="./css/Newday_animation.css">
 </head>
 
 <body>
     <header class="header">
-        <div class="container">
+        <div class="container wrap">
             <nav class="nav">
                 <div class="menu">
                     <ul class="menu__list">
-                        <li class="menu__list__item"><a href="./index.html">About Calendar</a></li>
+                        <li class="menu__list__item"><a href="./index.html">
+                            <i class="left_arrow">
+                                <img src="./img/left_arrow.png" alt="">
+                            </i>About Calendar
+                        </a></li>
                         <li class="menu__list__item"><a href="./Almanac.html">Almanac</a></li>
                         <li class="menu__list__item"><a href="./Holiday.html">Holiday</a></li>
-                        <li class="menu__list__item"><a href="#">Notice</a></li>
-                        <li class="menu__list__item"><a href="#">Other</a></li>
+                        <li class="menu__list__item"><a href="./Note.html">Other</a></li>
                     </ul>
                 </div>
             </nav>
             <section>
                 <div class="title">
-                    <a href="./Newday.html"><img src="./img/2.png" alt=""></a>
+                    <a href="./index.html"><img src="./img/2.png" alt=""></a>
                 </div>
                 <div class="time">
                     <div class="time__current">
@@ -42,22 +47,24 @@
                         </div>
                     </div>
                     <div class="time__month" id="timeMonth">
-                        <div class="time__month--current">
-                            <p>JANUARY</p>
-                        </div>
-                        <div class="time__month--info">
-                            <p>睦 月</p>
-                        </div>
-                        <div class="time__bg">
-                            <img id="move_bg" height="100%" width="100%" src="./img/P-11.png" alt="">
-                        </div>
+                        <a href="#">
+                            <div class="time__month--current">
+                                <p>JANUARY</p>
+                            </div>
+                            <div class="time__month--info">
+                                <p>睦 月</p>
+                            </div>
+                            <div class="time__bg">
+                                <img id="move_bg" height="100%" width="100%" src="./img/P-11.png" alt="">
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
         </div>
     </header>
     <main class="main">
-        <div class="container" id="container">
+        <div class="container wrap" id="container">
             <div class="calendar">
                 <div class="tl-toubu">
                     <div class="ri-toubu-right">
@@ -263,7 +270,7 @@
         </div>
     </main>
     <div class="end">
-        <p>EVERY DAY IS A GOOD DAY</p>
+        <p>NOW IS THE REAI BEGINNG</p>
     </div>
     <footer class="footer">
         <div class="container">

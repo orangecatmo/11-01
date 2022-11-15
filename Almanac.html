@@ -6,7 +6,8 @@
     <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>calender</title>
+    <title>日日是好日 Almanac</title>
+    <link rel="stylesheet" href="./css/public.css">
     <link rel="stylesheet" href="./css/public_header.css">
     <link rel="stylesheet" href="./css/Almanac_style.css">
     <link rel="stylesheet" href="./css/Almanac_base.css">
@@ -21,20 +22,19 @@
                 <div class="menu">
                     <ul class="menu__list">
                         <li class="menu__list__item"><a href="./index.html">
-                            <i class="left_arrow">
-                                <img src="./img/left_arrow.png" alt="">
-                            </i>About Calendar
-                        </a></li>
+                                <i class="left_arrow">
+                                    <img src="./img/left_arrow.png" alt="">
+                                </i>About Calendar
+                            </a></li>
                         <li class="menu__list__item"><a href="./Almanac.html">Almanac</a></li>
                         <li class="menu__list__item"><a href="./Holiday.html">Holiday</a></li>
-                        <li class="menu__list__item"><a href="#">Notice</a></li>
-                        <li class="menu__list__item"><a href="#">Other</a></li>
+                        <li class="menu__list__item"><a href="./Note.html">Other</a></li>
                     </ul>
                 </div>
             </nav>
             <section>
                 <div class="title">
-                    <a href="./Newday.html"><img src="./img/2.png" alt=""></a>
+                    <a href="./index.html"><img src="./img/2.png" alt=""></a>
                 </div>
                 <div class="time">
                     <div class="b_ri">
@@ -49,6 +49,7 @@
                         </dl>
 
                         <script>
+                            document.querySelector('.time').addEventListener('click', () => { location.href = './Newday.html' })
                             var d = new Date();
                             document.getElementById("demo").innerHTML = d.toDateString();
                         </script>
@@ -492,26 +493,31 @@
             <a href="#"><img src="./img/arrow.png" alt=""></a>
         </div>
     </div>
-    <!-- <div class="end">
-        <p>EVERY DAY IS A GOOD DAY</p>
+   <div class="end">
+        <p>NOW IS THE REAI BEGINNG</p>
     </div>
     <footer class="footer">
         <div class="container">
             <div class="ft__menu">
                 <ul class="ft__menu__list">
-                    <li class="menu__list__item"><a href="#">About Calendar</a></li>
-                    <li class="menu__list__item"><a href="#">Almanac</a></li>
-                    <li class="menu__list__item"><a href="#">Holiday</a></li>
-                    <li class="menu__list__item"><a href="#">Notice</a></li>
-                    <li class="menu__list__item"><a href="#">Other</a></li>
+                    <li class="menu__list__item">
+                        <a href="./index.html">
+                            <i class="left_arrow">
+                                <img src="./img/left_arrow.png" alt="">
+                            </i>About Calendar
+                        </a>
+                    </li>
+                    <li class="menu__list__item"><a href="./Almanac.html">Almanac</a></li>
+                    <li class="menu__list__item"><a href="./Holiday.html">Holiday</a></li>
+                    <li class="menu__list__item"><a href="./Note.html">Other</a></li>
                 </ul>
             </div>
         </div>
-        <div class="ft__tip">
+        <!-- <div class="ft__tip">
             <span>*季節の歲時記は過去30年間の平均です</span>
             <span>情報提供：一般財団法人 日本気象協会</span>
-        </div>
-    </footer> -->
+        </div> -->
+    </footer>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="./js/scrollState.js"></script>
     <script src="./js/date.js"></script>
