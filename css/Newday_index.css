@@ -207,7 +207,7 @@ table {
     /* padding: 1rem; */
     margin: auto;
     color: #000;
-    background-color: #F4F4F4;
+    background-color: #F4F4F4 0.5;
     text-align: center;
     border: 1px solid rgba(230, 230, 230, 0.4);
 }
@@ -237,7 +237,7 @@ td {
 
 thead>tr th {
     border: none;
-    color: #000;
+    color: #F4F4F4;
 }
 
 .calendar_end {

@@ -54,12 +54,12 @@
   .solar_term_date {
     width: 40px;
   }
-}
-
-@media screen and (max-width: 768px) {
-  html {
-    font-size: 12px;
+  
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .solar_term_date {
+    width: 40px;
   }
+}
 
   table {
     padding: 0;
